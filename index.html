@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lovely Cane - Personal Portfolio</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f9f5ff;
+      scroll-behavior: smooth;
+      color: #4b2a63;
+    }
+
+    .navbar {
+      background: #ffffffcc;
+      backdrop-filter: blur(10px);
+    }
+
+    .navbar-nav a {
+      color: #6b1d85;
+      position: relative;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .navbar-nav a:hover {
+      color: #d76fff;
+    }
+
+    .navbar-nav a::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: #d76fff;
+      transition: 0.3s;
+    }
+
+    .navbar-nav a:hover::after {
+      width: 100%;
+      left: 0;
+    }
+
+    .navbar-brand {
+      color: #6b1d85;
+      font-weight: 700;
+    }
+
+    .logo-nav {
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+    }
+
+    .c-btn {
+      border: none;
+      background: #d76fff;
+      color: #fff;
+      font-size: 15px;
+      width: 160px;
+      height: 50px;
+      transition: 0.3s;
+    }
+
+    .c-btn:hover {
+      background: #a01ee0;
+      transform: translateY(-3px);
+    }
+
+    .home {
+      background: linear-gradient(135deg, #f3e5ff 0%, #f0f0ff 100%);
+      padding: 80px 0;
+    }
+
+    .home h2 {
+      font-size: 3rem;
+      line-height: 1.3;
+      font-weight: 700;
+      color: #4b2a63;
+    }
+
+    .c-orange {
+      color: #d76fff;
+      font-weight: 700;
+    }
+
+    .home p {
+      font-size: 1.1rem;
+      margin-top: 20px;
+      color: #5e3f80;
+    }
+
+    .home img {
+      border: 5px solid #d76fff;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-15px);
+      }
+    }
+
+    .section-title {
+      font-weight: 700;
+      color: #d76fff;
+      margin-bottom: 40px;
+      text-align: center;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      width: 80px;
+      height: 3px;
+      background: #a01ee0;
+      display: block;
+      margin: 10px auto 0;
+      border-radius: 2px;
+    }
+
+    .list-group-item {
+      border-radius: 10px;
+      margin-bottom: 8px;
+      transition: 0.3s;
+    }
+
+    .list-group-item:hover {
+      background: #f2e5ff;
+    }
+
+    table {
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    table th,
+    table td {
+      vertical-align: middle !important;
+    }
+
+    table caption {
+      caption-side: top;
+      font-weight: 700;
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      color: #6b1d85;
+    }
+
+    @media(max-width:768px) {
+      .home h2 {
+        font-size: 2rem;
+      }
+
+      .c-btn {
+        width: 130px;
+        font-size: 14px;
+      }
+    }
+
+    footer {
+      background: #6b1d85;
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light sticky-top shadow-sm">
+    <div class="container-fluid px-5">
+      <div class="d-flex align-items-center me-3">
+        <img src="LOGOMMCA.png" alt="Logo MMCA" class="logo-nav me-2">
+        <img src="LOGOICT.png" alt="Logo ICT" class="logo-nav">
+      </div>
+      <a class="navbar-brand fs-2">Lovely</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav gap-4 fs-5">
+          <li class="nav-item"><a class="nav-link" href="#personal"><i class="bi bi-person-fill"></i> Personal Info</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="#skills"><i class="bi bi-lightning-fill"></i> Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#cschedule"><i class="bi bi-calendar-week"></i> Class
+              Schedule</a></li>
+          <li class="nav-item"><a class="nav-link" href="#tools"><i class="bi bi-laptop"></i> ICT Tools</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Home Section -->
+  <section class="home" id="home">
+    <div class="container">
+      <div class="row justify-content-center align-items-center">
+        <div class="col-md-6 text-center text-md-start">
+          <h2>Hello! I Am <br /><span class="c-orange">Lovely Cane</span></h2>
+          <p>I am a Grade 12 student at Mt. Moriah Christian Academt under the TVL-ICT strand.</p>
+          <div class="d-flex gap-3 justify-content-center justify-content-md-start mt-3 flex-wrap">
+            <a href="https://www.facebook.com/share/14DkVfdv5JW/"
+              class="c-btn d-flex align-items-center justify-content-center rounded-pill text-decoration-none">
+              <i class="fab fa-facebook-f me-2"></i> Facebook
+            </a>
+            <a href="https://www.instagram.com/prtty_luvvy_lie?igsh=MWNpd2NyM3RwZ2p0cg=="
+              class="c-btn d-flex align-items-center justify-content-center rounded-pill text-decoration-none">
+              <i class="fab fa-instagram me-2"></i> Instagram
+            </a>
+          </div>
+        </div>
+        <div class="col-md-4 d-none d-md-block">
+          <img src="cane.jpg" alt="profile" class="img-fluid rounded-circle shadow">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Personal Info Section -->
+  <section id="personal" class="container py-5">
+    <h2 class="section-title"><i class="bi bi-person-lines-fill"></i> Personal Information</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <ul class="list-group list-group-flush shadow-sm">
+          <li class="list-group-item"><strong>Name:</strong> Lovely Cane</li>
+          <li class="list-group-item"><strong>Age:</strong> 18</li>
+          <li class="list-group-item"><strong>Grade Level:</strong> Senior High School - ICT</li>
+          <li class="list-group-item"><strong>Section:</strong> ICT 12 - Competence</li>
+          <li class="list-group-item"><strong>Email:</strong> <a href="mailto:lovelycanerhen17@gmail.com"
+              class="text-decoration-none">lovelycanerhen17@gmail.com</a></li>
+          <li class="list-group-item"><strong>Phone:</strong> <a href="tel:+639128062976"
+              class="text-decoration-none">+63 9128062976</a></li>
+          <li class="list-group-item"><strong>Address:</strong> Blk-3 K-9 Samabana, Lower Bicutan, Taguig City</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills & Hobbies -->
+  <section id="skills" class="container py-5">
+    <h2 class="section-title"><i class="bi bi-lightbulb-fill"></i> Skills & Hobbies</h2>
+    <div class="row gap-4 justify-content-center">
+      <div class="col-md-5 shadow p-4 rounded bg-white" style="transition:0.3s"
+        onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+        <h4><i class="bi bi-tools"></i> Skills</h4>
+        <ol>
+          <li>Leadership</li>
+          <li>Time Management</li>
+          <li>Communication</li>
+          <li>Cooking</li>
+          <li>Budgeting</li>
+          <li>Collaborating</li>
+        </ol>
+      </div>
+      <div class="col-md-5 shadow p-4 rounded bg-white" style="transition:0.3s"
+        onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+        <h4><i class="bi bi-heart-fill"></i> Hobbies</h4>
+        <ul>
+          <li>Badminton</li>
+          <li>Drums</li>
+          <li>Dance</li>
+          <li>Reading Wattpad</li>
+          <li>Listening Music</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Class Schedule -->
+  <section id="cschedule" class="container py-5">
+    <h2 class="section-title"><i class="bi bi-calendar-week-fill"></i> Class Schedule</h2>
+    <div class="table-responsive shadow rounded">
+      <table class="table table-bordered text-center mb-0">
+        <caption class="fw-bold">ICT 12 - Competence Weekly Class Schedule</caption>
+        <thead class="table-dark">
+          <tr>
+            <th>Time</th>
+            <th>Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+            <th>Thursday</th>
+            <th>Friday</th>
+            <th>Saturday</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>7:30 - 11:30</td>
+            <td>--</td>
+            <td>--</td>
+            <td>--</td>
+            <td>--</td>
+            <td>--</td>
+            <td>Programming</td>
+          </tr>
+          <tr>
+            <td>11:30 - 12:30</td>
+            <td>Work Immersion</td>
+            <td>Work Immersion</td>
+            <td>Work Immersion</td>
+            <td>English</td>
+            <td>Library Time</td>
+            <td>Programming</td>
+          </tr>
+          <tr>
+            <td>12:30 - 1:30</td>
+            <td>English</td>
+            <td>Library Time</td>
+            <td>Library Time</td>
+            <td>Entrepreneur</td>
+            <td>Oralcom</td>
+            <td>Programming</td>
+          </tr>
+          <tr>
+            <td>1:30 - 2:30</td>
+            <td>English</td>
+            <td>Oralcom</td>
+            <td>Oralcom</td>
+            <td>Entrepreneur</td>
+            <td>Entrepreneur</td>
+            <td>--</td>
+          </tr>
+          <tr>
+            <td>2:30 - 3:00</td>
+            <td>Recess</td>
+            <td>Recess</td>
+            <td>Recess</td>
+            <td>Recess</td>
+            <td>Recess</td>
+            <td>--</td>
+          </tr>
+          <tr>
+            <td>3:00 - 4:00</td>
+            <td>--</td>
+            <td>Practical Research</td>
+            <td>Practical Research</td>
+            <td>Practical Research</td>
+            <td>Chapel</td>
+            <td>--</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ICT Tools -->
+  <section id="tools" class="container py-5">
+    <h2 class="section-title"><i class="fas fa-tools"></i> ICT Tools & Resources</h2>
+    <div class="table-responsive shadow rounded">
+      <table class="table table-bordered table-striped mb-0">
+        <caption class="fw-bold">ICT Tools and Resources</caption>
+        <thead class="table-dark">
+          <tr>
+            <th>Tool/Resource</th>
+            <th>Description</th>
+            <th>Website / Link</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><i class="bi bi-code-slash text-primary"></i> Visual Studio Code</td>
+            <td>Lightweight source-code editor with built-in support for JavaScript, TypeScript and Node.js.</td>
+            <td><a href="https://code.visualstudio.com/" target="_blank">code.visualstudio.com</a></td>
+          </tr>
+          <tr>
+            <td><i class="bi bi-journal-code text-success"></i> W3Schools</td>
+            <td>Free online tutorials and references for web development and programming languages.</td>
+            <td><a href="https://www.w3schools.com/" target="_blank">w3schools.com</a></td>
+          </tr>
+          <tr>
+            <td><i class="bi bi-github text-dark"></i> GitHub</td>
+            <td>Platform for hosting, sharing, and collaborating on code repositories.</td>
+            <td><a href="https://github.com/" target="_blank">github.com</a></td>
+          </tr>
+          <tr>
+            <td><i class="bi bi-google text-danger"></i> Google Classroom</td>
+            <td>Online education tool for classes, assignments, and communication.</td>
+            <td><a href="https://classroom.google.com/" target="_blank">classroom.google.com</a></td>
+          </tr>
+          <tr>
+            <td><i class="bi bi-brush text-info"></i> Canva</td>
+            <td>Graphic design platform to create presentations, social media graphics, and more.</td>
+            <td><a href="https://www.canva.com/" target="_blank">canva.com</a></td>
+          </tr>
+          <tr>
+            <td><i class="fab fa-bootstrap text-purple"></i> Bootstrap</td>
+            <td>Popular front-end framework for responsive and mobile-first web development.</td>
+            <td><a href="https://getbootstrap.com/" target="_blank">bootstrap.com</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-5 text-center">
+    <p class="mb-0">&copy; 2025 Lovely Cane. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
